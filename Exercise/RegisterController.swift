@@ -22,6 +22,26 @@ final class RegisterController: UIViewController {
 	@IBAction private func doRegister(_ sender: UIButton) {
 
 		// Here you could register?
+        guard let email = emailTextField.text else {
+            // throw alert
+            return
+        }
+        
+        guard let password = passwordTextField.text else {
+            // throw alert
+            return
+        }
+        
+        let validator = Validator()
+        guard validator.validateEmail(with: email) else {
+            // throw alert
+            return
+        }
+        
+        guard validator.validatePassword(with: password) else {
+            // throw alert
+            return
+        }
 
 		self.performSegue(withIdentifier: "showHome", sender: nil)
 	}
