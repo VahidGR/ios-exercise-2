@@ -15,6 +15,7 @@
 		3957FFBC22CCBC8B00F04506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3957FFBA22CCBC8B00F04506 /* LaunchScreen.storyboard */; };
 		39EDC8FA22CCC6790030A918 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39EDC8F922CCC6790030A918 /* GoogleService-Info.plist */; };
 		39EDC8FC22CCC86C0030A918 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EDC8FB22CCC86C0030A918 /* HomeController.swift */; };
+		C76AD39927CA7ED000C9285E /* KeyboardConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD39827CA7ED000C9285E /* KeyboardConfigurable.swift */; };
 		F76B3986B2D8AD1F7BA6750A /* Pods_Exercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF2B9FA6497AA1043663A1AC /* Pods_Exercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		39EDC8F922CCC6790030A918 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39EDC8FB22CCC86C0030A918 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		7FC491639764FD0FB374E137 /* Pods-Exercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Exercise.debug.xcconfig"; path = "Target Support Files/Pods-Exercise/Pods-Exercise.debug.xcconfig"; sourceTree = "<group>"; };
+		C76AD39827CA7ED000C9285E /* KeyboardConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardConfigurable.swift; sourceTree = "<group>"; };
 		FF2B9FA6497AA1043663A1AC /* Pods_Exercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Exercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 			children = (
 				3957FFB122CCBC8B00F04506 /* AppDelegate.swift */,
 				3957FFB322CCBC8B00F04506 /* RegisterController.swift */,
+				C76AD39827CA7ED000C9285E /* KeyboardConfigurable.swift */,
 				39EDC8FB22CCC86C0030A918 /* HomeController.swift */,
 				3957FFB522CCBC8B00F04506 /* Main.storyboard */,
 				3957FFB822CCBC8B00F04506 /* Assets.xcassets */,
@@ -283,6 +286,7 @@
 				3957FFB422CCBC8B00F04506 /* RegisterController.swift in Sources */,
 				3957FFB222CCBC8B00F04506 /* AppDelegate.swift in Sources */,
 				39EDC8FC22CCC86C0030A918 /* HomeController.swift in Sources */,
+				C76AD39927CA7ED000C9285E /* KeyboardConfigurable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
