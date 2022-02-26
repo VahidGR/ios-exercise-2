@@ -24,7 +24,7 @@ final class HomeController: UIViewController {
 	}
 
 	@IBAction private func createRandomProject(_ sender: UIBarButtonItem) {
-		// Here you could call the cloud function
+        writeProject(UUID().uuidString)
 	}
 
 	@IBAction private func doAdd(_ sender: Any) {
