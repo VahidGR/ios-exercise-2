@@ -13,7 +13,7 @@ final class RegisterController: UIViewController {
 
 	@IBOutlet private weak var emailTextField: UITextField!
 	@IBOutlet private weak var passwordTextField: UITextField!
-    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     @IBAction private func doClose(_ sender: UIBarButtonItem) {
 		self.dismiss(animated: true)
@@ -41,7 +41,7 @@ final class RegisterController: UIViewController {
     
     var constraintToChange: NSLayoutConstraint? {
         get {
-            return topConstraint
+            return bottomConstraint
         }
     }
     
