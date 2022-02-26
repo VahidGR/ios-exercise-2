@@ -101,7 +101,16 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-		cell.textLabel?.text = self.projects[indexPath.row]["title"] as? String
+        let dict = self.projects[indexPath.row]
+        let title = dict["title"] as? String
+        let timestap = dict["timestamp"] as? Timestamp
+        let date = timestap?.dateValue()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let dateString = formatter.string(from: date!)
+        let text = dateString + "  " + title!
+
+		cell.textLabel?.text = text
 
 		return cell
 	}
