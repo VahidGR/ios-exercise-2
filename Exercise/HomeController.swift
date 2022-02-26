@@ -65,11 +65,14 @@ extension HomeController {
 
 		let projectId = UUID().uuidString
 		let data: [String: Any] = [
+            "id": projectId,
 			"title": title,
 			"timestamp": Timestamp(date: Date())
 		]
 
 		// Here you could save the project into Firestore
+        firestore.collection("projects").addDocument(data: data)
+        loadProjects()
 	}
 }
 
