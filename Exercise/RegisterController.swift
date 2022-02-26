@@ -22,24 +22,17 @@ final class RegisterController: UIViewController {
 	@IBAction private func doRegister(_ sender: UIButton) {
 
 		// Here you could register?
-        guard let email = emailTextField.text else {
-            // throw alert
-            return
-        }
-        
-        guard let password = passwordTextField.text else {
-            // throw alert
-            return
-        }
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
         
         let validator = Validator()
         guard validator.validateEmail(with: email) else {
-            // throw alert
+            alert(title: "Error", message: "Please enter a valid email", action: "OK")
             return
         }
         
         guard validator.validatePassword(with: password) else {
-            // throw alert
+            alert(title: "Error", message: "Please enter a valid password", action: "OK")
             return
         }
 
