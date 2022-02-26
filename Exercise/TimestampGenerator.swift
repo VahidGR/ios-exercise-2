@@ -8,7 +8,7 @@
 
 import Firebase
 
-final class TomestampGenerator {
+final class TimestampGenerator {
     static func createTimestamp(year: Int, month: Int = 1, day: Int = 1) -> Timestamp {
         var dateComponents = DateComponents()
         dateComponents.year = year
