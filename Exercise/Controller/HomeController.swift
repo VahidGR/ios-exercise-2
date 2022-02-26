@@ -9,11 +9,6 @@
 import UIKit
 import Firebase
 
-protocol Controller {
-    func showError(message: String)
-    func updateUI()
-}
-
 final class HomeController: UIViewController, Controller {
 
 	@IBOutlet private weak var tableView: UITableView!
