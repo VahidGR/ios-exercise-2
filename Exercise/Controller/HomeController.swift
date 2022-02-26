@@ -13,7 +13,7 @@ final class HomeController: UIViewController, Controller {
 
 	@IBOutlet private weak var tableView: UITableView!
 
-    private var projects: [[String: Any]] {
+    private var projects: [Project] {
         get {
             return viewModel.projects
         }
@@ -67,16 +67,9 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
 
         let dict = self.projects[indexPath.row]
-        let title = dict["title"] as? String
-        let timestap = dict["timestamp"] as? Timestamp
         
-        let date = timestap?.dateValue()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        let dateString = formatter.string(from: date!)
-        
-		cell.title = title
-        cell.date = dateString
+        cell.title = dict.title
+        cell.date = dict.timestamp
 
 		return cell
 	}

@@ -13,7 +13,7 @@ class HomeViewModel {
     var delegate: Controller?
     
     private let firestore = Firestore.firestore()
-    var projects = [[String: Any]]()
+    var projects = [Project]()
     // error message
     private var message: String? {
         didSet {
@@ -35,7 +35,9 @@ class HomeViewModel {
             if error == nil {
                 if let snapshot = snapshot {
                     for document in (snapshot.documents) {
-                        self?.projects.append(document.data())
+                        if let model = self?.decodeToModel(data: document.data()) {
+                            self?.projects.append(model)
+                        }
                     }
                     
                     DispatchQueue.main.async {
@@ -71,17 +73,21 @@ class HomeViewModel {
                 snapshot?.documentChanges.forEach { diff in
                     let document = diff.document.data()
                     if (diff.type == .added) {
-                        if let _ = self?.projects.firstIndex(where: { $0["id"] as? String == document["id"] as? String }) { } else {
-                            self?.projects.append(document)
+                        if let _ = self?.projects.firstIndex(where: { $0.id == document["id"] as? String }) { } else {
+                            if let model = self?.decodeToModel(data: document) {
+                                self?.projects.append(model)
+                            }
                         }
                     }
                     if (diff.type == .modified) {
-                        if let index = self?.projects.firstIndex(where: { $0["id"] as? String == document["id"] as? String }) {
-                            self?.projects[index] = document
+                        if let index = self?.projects.firstIndex(where: { $0.id == document["id"] as? String }) {
+                            if let model = self?.decodeToModel(data: document) {
+                                self?.projects[index] = model
+                            }
                         }
                     }
                     if (diff.type == .removed) {
-                        if let index = self?.projects.firstIndex(where: { $0["id"] as? String == document["id"] as? String }) {
+                        if let index = self?.projects.firstIndex(where: { $0.id == document["id"] as? String }) {
                             self?.projects.remove(at: index)
                         }
                     }
@@ -94,6 +100,19 @@ class HomeViewModel {
                 self?.message = error?.localizedDescription
             }
         }
+    }
+    
+    // MARK: - Decode recieved value to a Codable object
+    private func decodeToModel(data: [String: Any]) -> Project {
+        let id = data["id"] as? String
+        let title = data["title"] as? String
+        let timestamp = data["timestamp"] as? Timestamp
+        let date = timestamp!.dateValue()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let formattedTime = formatter.string(from: date)
+        
+        return Project(id: id, title: title, timestamp: formattedTime)
     }
 
 }

@@ -27,6 +27,8 @@
 		C76AD3BA27CAB35800C9285E /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD3B827CAB35800C9285E /* Controller.swift */; };
 		C76AD3C027CAB68200C9285E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD3BF27CAB68200C9285E /* TableViewCell.swift */; };
 		C76AD3C127CAB68200C9285E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD3BF27CAB68200C9285E /* TableViewCell.swift */; };
+		C76AD3C327CAC70300C9285E /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD3C227CAC70300C9285E /* Project.swift */; };
+		C76AD3C427CAC70300C9285E /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD3C227CAC70300C9285E /* Project.swift */; };
 		F76B3986B2D8AD1F7BA6750A /* Pods_Exercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF2B9FA6497AA1043663A1AC /* Pods_Exercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,7 @@
 		C76AD3B227CAAF9800C9285E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C76AD3B827CAB35800C9285E /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		C76AD3BF27CAB68200C9285E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C76AD3C227CAC70300C9285E /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		FF2B9FA6497AA1043663A1AC /* Pods_Exercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Exercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -156,6 +159,7 @@
 			children = (
 				C76AD39F27CA880000C9285E /* Password.swift */,
 				C76AD39D27CA854300C9285E /* EmailAddress.swift */,
+				C76AD3C227CAC70300C9285E /* Project.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,6 +358,7 @@
 				393D951A22CD007B0050375F /* ExerciseUITests.swift in Sources */,
 				C76AD3C127CAB68200C9285E /* TableViewCell.swift in Sources */,
 				C76AD3BA27CAB35800C9285E /* Controller.swift in Sources */,
+				C76AD3C427CAC70300C9285E /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +371,7 @@
 				C76AD3B927CAB35800C9285E /* Controller.swift in Sources */,
 				C76AD39B27CA84A500C9285E /* Validator.swift in Sources */,
 				C76AD3B327CAAF9800C9285E /* HomeViewModel.swift in Sources */,
+				C76AD3C327CAC70300C9285E /* Project.swift in Sources */,
 				C76AD3A027CA880000C9285E /* Password.swift in Sources */,
 				C76AD39E27CA854300C9285E /* EmailAddress.swift in Sources */,
 				39EDC8FC22CCC86C0030A918 /* HomeController.swift in Sources */,
