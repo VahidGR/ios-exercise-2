@@ -22,6 +22,7 @@
 		C76AD3AD27CA974A00C9285E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C76AD3AC27CA974A00C9285E /* GoogleService-Info.plist */; };
 		C76AD3AE27CA974A00C9285E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C76AD3AC27CA974A00C9285E /* GoogleService-Info.plist */; };
 		C76AD3B027CA9CA200C9285E /* TimestampGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD3AF27CA9CA200C9285E /* TimestampGenerator.swift */; };
+		C76AD3B327CAAF9800C9285E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD3B227CAAF9800C9285E /* HomeViewModel.swift */; };
 		F76B3986B2D8AD1F7BA6750A /* Pods_Exercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF2B9FA6497AA1043663A1AC /* Pods_Exercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		C76AD3A127CA8AB300C9285E /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		C76AD3AC27CA974A00C9285E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C76AD3AF27CA9CA200C9285E /* TimestampGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampGenerator.swift; sourceTree = "<group>"; };
+		C76AD3B227CAAF9800C9285E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FF2B9FA6497AA1043663A1AC /* Pods_Exercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Exercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 				C76AD39F27CA880000C9285E /* Password.swift */,
 				C76AD39D27CA854300C9285E /* EmailAddress.swift */,
 				39EDC8FB22CCC86C0030A918 /* HomeController.swift */,
+				C76AD3B227CAAF9800C9285E /* HomeViewModel.swift */,
 				C76AD3AF27CA9CA200C9285E /* TimestampGenerator.swift */,
 				3957FFB522CCBC8B00F04506 /* Main.storyboard */,
 				3957FFB822CCBC8B00F04506 /* Assets.xcassets */,
@@ -303,6 +306,7 @@
 				3957FFB422CCBC8B00F04506 /* RegisterController.swift in Sources */,
 				3957FFB222CCBC8B00F04506 /* AppDelegate.swift in Sources */,
 				C76AD39B27CA84A500C9285E /* Validator.swift in Sources */,
+				C76AD3B327CAAF9800C9285E /* HomeViewModel.swift in Sources */,
 				C76AD3A027CA880000C9285E /* Password.swift in Sources */,
 				C76AD39E27CA854300C9285E /* EmailAddress.swift in Sources */,
 				39EDC8FC22CCC86C0030A918 /* HomeController.swift in Sources */,

@@ -9,23 +9,37 @@
 import UIKit
 import Firebase
 
-final class HomeController: UIViewController {
+protocol Controller {
+    func showError(message: String)
+    func updateUI()
+}
+
+final class HomeController: UIViewController, Controller {
 
 	@IBOutlet private weak var tableView: UITableView!
 
-	private let firestore = Firestore.firestore()
-	private var projects = [[String: Any]]()
+    private var projects: [[String: Any]] {
+        get {
+            return viewModel.projects
+        }
+        set {
+            viewModel.projects = newValue
+        }
+    }
+    private let viewModel = HomeViewModel()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-		self.loadProjects()
+        
+        viewModel.delegate = self
+        viewModel.loadProjects()
 	}
 
 	@IBAction private func createRandomProject(_ sender: UIBarButtonItem) {
         let title = UUID().uuidString
-        writeProject(title)
+        viewModel.writeProject(title)
 	}
 
 	@IBAction private func doAdd(_ sender: Any) {
@@ -37,7 +51,7 @@ final class HomeController: UIViewController {
 
 		let action = UIAlertAction(title: "Save", style: .default) { action in
 			if let text = alert.textFields?.first?.text {
-				self.writeProject(text)
+                self.viewModel.writeProject(text)
 			}
 		}
 		alert.addAction(action)
@@ -46,49 +60,6 @@ final class HomeController: UIViewController {
 		alert.addAction(cancel)
 
 		present(alert, animated: true, completion: nil)
-	}
-}
-
-extension HomeController {
-
-	private func loadProjects() {
-
-		self.projects.removeAll()
-//        let year2020 = TimestampGenerator.createTimestamp(year: 2020)
-//        let year2019 = TimestampGenerator.createTimestamp(year: 2019)
-        firestore.collection("projects")
-//            .whereField("timestamp", isLessThan: year2020)
-//            .whereField("timestamp", isGreaterThan: year2019)
-            .getDocuments { [weak self] snapshot, error in
-            if error == nil {
-                if let snapshot = snapshot {
-                    for document in (snapshot.documents) {
-                        self?.projects.append(document.data())
-                    }
-                    
-                    DispatchQueue.main.async {
-                        self?.tableView.reloadData()
-                    }
-                    self?.startListening()
-                } else {
-                    self?.alert(title: "Error", message: "Invalid snapshot", action: "OK")
-                }
-            }
-            else {
-                self?.alert(title: "Error", message: error!.localizedDescription, action: "OK")
-            }
-        }
-	}
-
-	private func writeProject(_ title: String) {
-		let projectId = UUID().uuidString
-		let data: [String: Any] = [
-            "id": projectId,
-			"title": title,
-			"timestamp": Timestamp(date: Date())
-		]
-        
-        firestore.collection("projects").addDocument(data: data)
 	}
 }
 
@@ -115,36 +86,14 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
 	}
 }
 
-// MARK: - Add listener
 extension HomeController {
-    private func startListening() {
-        firestore.collection("projects").addSnapshotListener { [weak self] snapshot, error in
-            if error == nil {
-                snapshot?.documentChanges.forEach { diff in
-                    let document = diff.document.data()
-                    if (diff.type == .added) {
-                        if let _ = self?.projects.firstIndex(where: { $0["id"] as? String == document["id"] as? String }) { } else {
-                            self?.projects.append(document)
-                        }
-                    }
-                    if (diff.type == .modified) {
-                        if let index = self?.projects.firstIndex(where: { $0["id"] as? String == document["id"] as? String }) {
-                            self?.projects[index] = document
-                        }
-                    }
-                    if (diff.type == .removed) {
-                        if let index = self?.projects.firstIndex(where: { $0["id"] as? String == document["id"] as? String }) {
-                            self?.projects.remove(at: index)
-                        }
-                    }
-                }
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            }
-            else {
-                self?.alert(title: "Error", message: error!.localizedDescription, action: "OK")
-            }
+    func updateUI() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
         }
+    }
+    
+    func showError(message: String) {
+        alert(title: "Error", message: message, action: "OK")
     }
 }
