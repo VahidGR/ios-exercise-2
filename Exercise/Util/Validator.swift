@@ -9,6 +9,10 @@
 import Foundation
 
 final class Validator {
+    func user(email: String?, password: String, completion: @escaping ((Bool) -> ())) {
+        completion(validateEmail(with: email) && validatePassword(with: password))
+    }
+    
     func validateEmail(with string: String?) -> Bool {
         let rawEmail = string?.trimmingCharacters(
             in: .whitespaces
