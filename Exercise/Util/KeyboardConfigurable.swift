@@ -71,7 +71,7 @@ extension KeyboardConfigurable where Self: UIViewController {
             original_constant = constraintToChange?.constant
         }
 
-        constraintToChange?.constant = -160 // -keyboardHeight! - 20
+        constraintToChange?.constant = keyboardHeight! + 20
         
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
