@@ -51,15 +51,27 @@ extension HomeController {
 
 	private func loadProjects() {
 
-		// Here you could load projects from Firestore and use the following to reload TableView
-
 		self.projects.removeAll()
 
-		for document in snapshot?.documents {
-			self.projects.append(document.data())
-		}
-
-		self.tableView.reloadData()
+        firestore.collection("projects").getDocuments { [weak self] snapshot, error in
+            if error == nil {
+                if let snapshot = snapshot {
+                    for document in (snapshot.documents) {
+                        self?.projects.append(document.data())
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
+                    
+                } else {
+                    self?.alert(title: "Error", message: "Invalid snapshot", action: "OK")
+                }
+            }
+            else {
+                self?.alert(title: "Error", message: error!.localizedDescription, action: "OK")
+            }
+        }
 	}
 
 	private func writeProject(_ title: String) {
