@@ -13,13 +13,14 @@
 		3957FFB722CCBC8B00F04506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3957FFB522CCBC8B00F04506 /* Main.storyboard */; };
 		3957FFB922CCBC8B00F04506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3957FFB822CCBC8B00F04506 /* Assets.xcassets */; };
 		3957FFBC22CCBC8B00F04506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3957FFBA22CCBC8B00F04506 /* LaunchScreen.storyboard */; };
-		39EDC8FA22CCC6790030A918 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39EDC8F922CCC6790030A918 /* GoogleService-Info.plist */; };
 		39EDC8FC22CCC86C0030A918 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EDC8FB22CCC86C0030A918 /* HomeController.swift */; };
 		C76AD39927CA7ED000C9285E /* KeyboardConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD39827CA7ED000C9285E /* KeyboardConfigurable.swift */; };
 		C76AD39B27CA84A500C9285E /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD39A27CA84A500C9285E /* Validator.swift */; };
 		C76AD39E27CA854300C9285E /* EmailAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD39D27CA854300C9285E /* EmailAddress.swift */; };
 		C76AD3A027CA880000C9285E /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD39F27CA880000C9285E /* Password.swift */; };
 		C76AD3A227CA8AB300C9285E /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD3A127CA8AB300C9285E /* UIViewController+Alert.swift */; };
+		C76AD3AD27CA974A00C9285E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C76AD3AC27CA974A00C9285E /* GoogleService-Info.plist */; };
+		C76AD3AE27CA974A00C9285E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C76AD3AC27CA974A00C9285E /* GoogleService-Info.plist */; };
 		F76B3986B2D8AD1F7BA6750A /* Pods_Exercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF2B9FA6497AA1043663A1AC /* Pods_Exercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +46,6 @@
 		3957FFB822CCBC8B00F04506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3957FFBB22CCBC8B00F04506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3957FFBD22CCBC8B00F04506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39EDC8F922CCC6790030A918 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39EDC8FB22CCC86C0030A918 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		7FC491639764FD0FB374E137 /* Pods-Exercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Exercise.debug.xcconfig"; path = "Target Support Files/Pods-Exercise/Pods-Exercise.debug.xcconfig"; sourceTree = "<group>"; };
 		C76AD39827CA7ED000C9285E /* KeyboardConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardConfigurable.swift; sourceTree = "<group>"; };
@@ -53,6 +53,7 @@
 		C76AD39D27CA854300C9285E /* EmailAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddress.swift; sourceTree = "<group>"; };
 		C76AD39F27CA880000C9285E /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		C76AD3A127CA8AB300C9285E /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		C76AD3AC27CA974A00C9285E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF2B9FA6497AA1043663A1AC /* Pods_Exercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Exercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,7 +120,7 @@
 				3957FFB822CCBC8B00F04506 /* Assets.xcassets */,
 				3957FFBA22CCBC8B00F04506 /* LaunchScreen.storyboard */,
 				3957FFBD22CCBC8B00F04506 /* Info.plist */,
-				39EDC8F922CCC6790030A918 /* GoogleService-Info.plist */,
+				C76AD3AC27CA974A00C9285E /* GoogleService-Info.plist */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -224,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C76AD3AE27CA974A00C9285E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3957FFBC22CCBC8B00F04506 /* LaunchScreen.storyboard in Resources */,
-				39EDC8FA22CCC6790030A918 /* GoogleService-Info.plist in Resources */,
+				C76AD3AD27CA974A00C9285E /* GoogleService-Info.plist in Resources */,
 				3957FFB922CCBC8B00F04506 /* Assets.xcassets in Resources */,
 				3957FFB722CCBC8B00F04506 /* Main.storyboard in Resources */,
 			);
@@ -340,7 +342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BW3RU3UC53;
+				DEVELOPMENT_TEAM = LX395P875U;
 				INFOPLIST_FILE = ExerciseUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -359,7 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BW3RU3UC53;
+				DEVELOPMENT_TEAM = LX395P875U;
 				INFOPLIST_FILE = ExerciseUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -496,13 +498,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A5EKHJ2X2S;
+				DEVELOPMENT_TEAM = LX395P875U;
 				INFOPLIST_FILE = Exercise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = vahidgr.mycrafty.exercise;
+				PRODUCT_BUNDLE_IDENTIFIER = de.mycrafty.exercise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -515,13 +517,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A5EKHJ2X2S;
+				DEVELOPMENT_TEAM = LX395P875U;
 				INFOPLIST_FILE = Exercise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = vahidgr.mycrafty.exercise;
+				PRODUCT_BUNDLE_IDENTIFIER = de.mycrafty.exercise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
