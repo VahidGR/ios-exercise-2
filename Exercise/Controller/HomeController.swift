@@ -64,18 +64,19 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     }
     
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
 
         let dict = self.projects[indexPath.row]
         let title = dict["title"] as? String
         let timestap = dict["timestamp"] as? Timestamp
+        
         let date = timestap?.dateValue()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let dateString = formatter.string(from: date!)
-        let text = dateString + "  " + title!
-
-		cell.textLabel?.text = text
+        
+		cell.title = title
+        cell.date = dateString
 
 		return cell
 	}
