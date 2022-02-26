@@ -1,5 +1,5 @@
 //
-//  PasswordValidator.swift
+//  Validator.swift
 //  Exercise
 //
 //  Created by Vahid Ghanbarpour on 2/26/22.
@@ -9,8 +9,8 @@
 import Foundation
 
 final class Validator {
-    func validateEmail(with srting: String) -> Bool {
-        let rawEmail = email?.trimmingCharacters(
+    func validateEmail(with string: String?) -> Bool {
+        let rawEmail = string?.trimmingCharacters(
             in: .whitespaces
         )
 
