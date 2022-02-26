@@ -29,6 +29,8 @@
 		C76AD3C127CAB68200C9285E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD3BF27CAB68200C9285E /* TableViewCell.swift */; };
 		C76AD3C327CAC70300C9285E /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD3C227CAC70300C9285E /* Project.swift */; };
 		C76AD3C427CAC70300C9285E /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD3C227CAC70300C9285E /* Project.swift */; };
+		C76AD3C927CAE0F900C9285E /* Timestamp+formattedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD3C827CAE0F900C9285E /* Timestamp+formattedDate.swift */; };
+		C76AD3CA27CAE0F900C9285E /* Timestamp+formattedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76AD3C827CAE0F900C9285E /* Timestamp+formattedDate.swift */; };
 		F76B3986B2D8AD1F7BA6750A /* Pods_Exercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF2B9FA6497AA1043663A1AC /* Pods_Exercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,7 @@
 		C76AD3B827CAB35800C9285E /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		C76AD3BF27CAB68200C9285E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C76AD3C227CAC70300C9285E /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		C76AD3C827CAE0F900C9285E /* Timestamp+formattedDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timestamp+formattedDate.swift"; sourceTree = "<group>"; };
 		FF2B9FA6497AA1043663A1AC /* Pods_Exercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Exercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -196,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				C76AD3A127CA8AB300C9285E /* UIViewController+Alert.swift */,
+				C76AD3C827CAE0F900C9285E /* Timestamp+formattedDate.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -355,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C76AD3CA27CAE0F900C9285E /* Timestamp+formattedDate.swift in Sources */,
 				393D951A22CD007B0050375F /* ExerciseUITests.swift in Sources */,
 				C76AD3C127CAB68200C9285E /* TableViewCell.swift in Sources */,
 				C76AD3BA27CAB35800C9285E /* Controller.swift in Sources */,
@@ -367,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3957FFB422CCBC8B00F04506 /* RegisterController.swift in Sources */,
+				C76AD3C927CAE0F900C9285E /* Timestamp+formattedDate.swift in Sources */,
 				3957FFB222CCBC8B00F04506 /* AppDelegate.swift in Sources */,
 				C76AD3B927CAB35800C9285E /* Controller.swift in Sources */,
 				C76AD39B27CA84A500C9285E /* Validator.swift in Sources */,
@@ -574,6 +580,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LX395P875U;
 				INFOPLIST_FILE = Exercise/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -593,6 +600,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LX395P875U;
 				INFOPLIST_FILE = Exercise/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
