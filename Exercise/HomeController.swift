@@ -32,6 +32,7 @@ final class HomeController: UIViewController {
 		let alert = UIAlertController(title: "New project", message: "Enter a project title", preferredStyle: .alert)
 		alert.addTextField { textField in
 			textField.keyboardType = .alphabet
+            textField.accessibilityIdentifier = "new-element"
 		}
 
 		let action = UIAlertAction(title: "Save", style: .default) { action in

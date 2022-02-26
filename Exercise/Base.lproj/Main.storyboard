@@ -219,6 +219,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="El4-cF-AIp">
                                 <rect key="frame" x="32" y="564.5" width="350" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.36078431370000003" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="register-2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="dlz-92-c6I"/>
                                 </constraints>
