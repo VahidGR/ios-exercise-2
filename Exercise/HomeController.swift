@@ -52,8 +52,12 @@ extension HomeController {
 	private func loadProjects() {
 
 		self.projects.removeAll()
-
-        firestore.collection("projects").getDocuments { [weak self] snapshot, error in
+        let year2020 = TimestampGenerator.createTimestamp(year: 2020)
+        let year2019 = TimestampGenerator.createTimestamp(year: 2019)
+            firestore.collection("projects")
+            .whereField("timestamp", isLessThan: year2020)
+            .whereField("timestamp", isGreaterThan: year2019)
+            .getDocuments { [weak self] snapshot, error in
             if error == nil {
                 if let snapshot = snapshot {
                     for document in (snapshot.documents) {
