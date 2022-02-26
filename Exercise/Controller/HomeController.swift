@@ -15,10 +15,10 @@ final class HomeController: UIViewController, Controller {
 
     private var projects: [Project] {
         get {
-            return viewModel.projects
+            return viewModel.projects.data
         }
         set {
-            viewModel.projects = newValue
+            viewModel.projects.data = newValue
         }
     }
     private let viewModel = HomeViewModel()
@@ -29,7 +29,7 @@ final class HomeController: UIViewController, Controller {
         tableView.dataSource = self
         
         viewModel.delegate = self
-        viewModel.loadProjects()
+        viewModel.startListening()
 	}
 
 	@IBAction private func createRandomProject(_ sender: UIBarButtonItem) {
@@ -77,9 +77,7 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeController {
     func updateUI() {
-        DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
-        }
+        tableView.reloadData()
     }
     
     func showError(message: String) {
