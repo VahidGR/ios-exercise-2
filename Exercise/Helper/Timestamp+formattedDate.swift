@@ -11,7 +11,7 @@ import Firebase
 extension Timestamp {
     var formattedTime: String? {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         return formatter.string(from: dateValue())
     }
