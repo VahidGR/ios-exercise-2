@@ -37,21 +37,42 @@ class HomeViewModel {
     }
 
     // MARK: - Listen to changes
+    private var loaded1stBatch = false
     func startListening() {
-        db.collection("projects").addSnapshotListener { [weak self] snapshot, error in
+        let collection = db.collection("projects")
+        
+        let year2020 = projects.generator.createTimestamp(year: 2020)
+        let year2019 = projects.generator.createTimestamp(year: 2019)
+        let filteredProjects = collection
+            .whereField("timestamp", isLessThan: year2020)
+            .whereField("timestamp", isGreaterThan: year2019)
+            .order(by: "timestamp")
+
+        let observable = collection
+            .order(by: "timestamp")
+        
+        filteredProjects.getDocuments(completion: { snapshot, error in
+            handleRequest(snapshot, error)
+            observable.addSnapshotListener { snapshot, error in
+                    handleRequest(snapshot, error)
+            }
+            self.loaded1stBatch = true
+        })
+        
+        func handleRequest(_ snapshot: QuerySnapshot?, _ error: Error?) {
             if error == nil {
                 snapshot?.documentChanges.forEach { diff in
                     let document = diff.document.data()
                     if (diff.type == .added) {
-                        self?.projects.update(insert: document)
+                        projects.update(insert: document, is1sBatch: !loaded1stBatch)
                     }
                 }
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
                     self?.delegate?.updateUI()
                 }
             }
             else {
-                self?.error = error
+                self.error = error
             }
         }
     }
@@ -59,19 +80,32 @@ class HomeViewModel {
     class Projects {
         var data: [Project]
         var generator = TimestampGenerator()
+        private let createdDate: Date
         
         init(data: [Project] = [])
         {
             self.data = data
+            createdDate = Date()
         }
         
         func update(insert document: Project) {
             data.append(document)
         }
         
-        func update(insert data: [String: Any]?) {
+        func update(insert data: [String: Any]?, is1sBatch: Bool = false) {
             if let document = parse(remote: data) {
-                update(insert: document)
+                guard let date = document.timestamp?.date else { return }
+                if is1sBatch {
+                    if date.year == 2019 {
+                        update(insert: document)
+                    }
+                }
+                else {
+                    let isNewDocument = (date - createdDate) > 0
+                    if isNewDocument {
+                        update(insert: document)
+                    }
+                }
             }
         }
         
