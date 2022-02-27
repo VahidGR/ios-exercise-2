@@ -69,7 +69,7 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         let dict = self.projects[indexPath.row]
         
         cell.title = dict.title
-        cell.date = dict.timestamp
+        cell.date = dict.timestamp?.shortFormattedTime
 
 		return cell
 	}
